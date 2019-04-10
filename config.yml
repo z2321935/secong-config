@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 8013
+spring:
+  profiles: dev
+  application:
+    name: client
+    eureka:
+      client:
+        service-url:
+          defaultZone: http://eureka001.com:7001/eureka/
+---
+server:
+  port: 8003
+spring:
+  profiles: test
+  application:
+    name: client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka001.com:7001/eureka/
